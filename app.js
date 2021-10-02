@@ -28,3 +28,13 @@ const no = prompt("Quel est votre nom");
 const gigi = prompt("Quel est age");
 let presentation2 = `vous etes ${no} ${pre} , et vous avez ${gigi} ans`;
 console.log(presentation2);
+
+const monAge = parseInt(prompt("votre age :"));
+const peutVoter = monAge >= 18;
+console.log("Est que je peux voter");
+console.log(`R:${peutVoter}`);
+
+const motDePasse = prompt("veuillez saisir un Nouveau Mot de Passe");
+const motDePassQueSaisi = prompt("Saisi ton mot de passe mon ami");
+const motDePasseEstvalide = motDePasse == motDePassQueSaisi;
+console.log(`le mot de passe est : ${motDePasseEstvalide}`);
