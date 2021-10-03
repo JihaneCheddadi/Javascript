@@ -1,0 +1,40 @@
+<script>
+  let tailleMatrice = parseInt(prompt("Saisissez la taille de votre matrice"));
+
+  let somme = 0;
+  while (tailleMatrice % 2 != 0) {
+    if (tailleMatrice % 2 != 0) {
+      alert("Saisissez un nombre pour que la matrice soit carée");
+      tailleMatrice = parseInt(prompt("Saisissez la taille de votre matrice"));
+    }
+  }
+  alert("Taille matrice correcte");
+  var arr = Create2DArray(tailleMatrice);
+
+  for (let i = 0; i < tailleMatrice; i++) {
+    for (let j = 0; j < tailleMatrice; j++) {
+      arr[i][j] = parseInt(prompt("saisez les nombres "));
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    somme += arr[i][arr.length - i - 1];
+  }
+
+  console.log;
+
+  function Create2DArray(rows) {
+    var arr = [];
+    for (var i = 0; i < rows; i++) {
+      arr[i] = [];
+    }
+    return arr;
+  }
+
+  for (var i = 0; i < tailleMatrice; i++) {
+    for (var j = 0; j < tailleMatrice; j++) {
+      document.write(arr[i][j] + " ");
+    }
+    document.write("<br>");
+  }
+</script>
