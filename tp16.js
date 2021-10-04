@@ -1,12 +1,7 @@
-let tailleMatrice = parseInt(prompt("Saisissez la taille de votre matrice"));
+let tailleMatrice = parseInt(
+  prompt("Saisissez la taille de votre matrice carée")
+);
 let somme = 0;
-while (tailleMatrice % 2 != 0) {
-  if (tailleMatrice % 2 != 0) {
-    alert("Saisissez un nombre pour que la matrice soit carée");
-    tailleMatrice = parseInt(prompt("Saisissez la taille de votre matrice"));
-  }
-}
-alert("Taille matrice correcte");
 
 let matrice = [];
 for (let i = 0; i < tailleMatrice; i++) {
@@ -15,7 +10,7 @@ for (let i = 0; i < tailleMatrice; i++) {
 
 for (let i = 0; i < tailleMatrice; i++) {
   for (let j = 0; j < tailleMatrice; j++) {
-    matrice[i][j] = parseInt(prompt("saisez les nombres "));
+    matrice[i][j] = parseInt(prompt("Saissez les nombres "));
   }
 }
 
@@ -23,4 +18,4 @@ for (let i = 0; i < tailleMatrice; i++) {
   somme += matrice[i][i];
 }
 
-alert(somme);
+alert(`la somme de la diagonale ${somme}`);

@@ -1,15 +1,18 @@
 let tab = [];
-let nmbrPetit = 0;
-let nmbrGrand = 0;
 
 for (i = 0; i < 5; i++) {
   tab[i] = parseInt(prompt("saisez les nombres "));
 }
 
-for (i = 0; i < 4; i++) {
-  if (tab[i] > tab[i + 1]) {
+let nmbrPetit = tab[0];
+let nmbrGrand = tab[0];
+
+for (i = 0; i < tab.length; i++) {
+  if (tab[i] > nmbrGrand) {
     nmbrGrand = tab[i];
-  } else if (tab[i] < tab[i + 1]) {
+  }
+
+  if (tab[i] < nmbrPetit) {
     nmbrPetit = tab[i];
   }
 }
