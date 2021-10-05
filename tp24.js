@@ -1,4 +1,4 @@
-/*function Etudiant(nom, prenom, age, genre, pays, option, listeCours) {
+function Etudiant(nom, prenom, age, genre, pays, option, listeCours) {
   this.nom = nom;
   this.prenom = prenom;
   this.age = age;
@@ -8,7 +8,7 @@
   this.listeCours = listeCours;
 }
 
-let nbrEtudiant = parseInt(prompt("Entrez le nombre d'étudiant à inscrire :"));
+/*let nbrEtudiant = parseInt(prompt("Entrez le nombre d'étudiant à inscrire :"));
 let listeEtudiant = [];
 
 for (let i = 0; i < nbrEtudiant; i++) {
@@ -39,11 +39,11 @@ Etudiant.prototype.changeOption = function (nouvOption) {
   return (this.option = nouvOption);
 };*/
 
+//recuperation des informations du formulaire
 const nomInput = document.querySelector("#nom");
 const prenomInput = document.querySelector("#prenom");
 const ageInput = document.querySelector("#age");
 const genreInput = document.querySelector("#genre");
-
 const paysInput = document.querySelector("#pays");
 const optionInput = document.querySelector("#option");
 const listeCoursInput = document.querySelector("#listeCours");
@@ -51,6 +51,13 @@ const listeCoursInput = document.querySelector("#listeCours");
 const form = document.querySelector("#form");
 
 const tabEtudiant = document.querySelector("#tabEtudiant");
+
+const titreFormulaire = document.createElement("h1");
+titreFormulaire.innerText = "Formulaire des inscriptions";
+//inserer titre avant le formulaire
+form.before(titreFormulaire);
+//Creation du tableau
+let tableauxDesInscriptions = [];
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -79,4 +86,19 @@ form.addEventListener("submit", function (e) {
 
   tabEtudiant.append(tr);
   tr.append(nom, prenom, age, pays, genre, option, listeCours);
+  //Ajout dans le tableau les inscriptions
+  tableauxDesInscriptions.push(
+    new Etudiant(
+      nomInput.value,
+      prenomInput.value,
+      ageInput.value,
+      genreInput.value,
+      paysInput.value,
+      optionInput.value,
+      listeCoursInput.value
+    )
+  );
+
+  document.getElementById("form").reset();
+  console.log(tableauxDesInscriptions);
 });
