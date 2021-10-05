@@ -58,6 +58,7 @@ let listeEtudiantAvecA = [];
 let listeNoms = [];
 let listeFemmeAvecK = [];
 let listeHommeAvecM = [];
+let listeRussie = [];
 
 for (let i = 0; i < listeEtudiant.length; i++) {
   if (
@@ -84,6 +85,12 @@ for (let i = 0; i < listeEtudiant.length; i++) {
   ) {
     listeHommeAvecM.push(listeEtudiant[i]);
   }
+  if (
+    listeEtudiant[i].getPays() == "Russie" &&
+    listeEtudiant[i].getGenre() == "H"
+  ) {
+    listeRussie[i].push(listeEtudiant[i]);
+  }
 }
 
 console.log(`Le nombre de chinoise est: ${compteurChinoise}`);
@@ -99,3 +106,6 @@ console.log(listeFemmeAvecK);
 
 console.log("La liste de tous les hommes dont les noms commencent par M");
 console.log(listeHommeAvecM);
+
+console.log("La liste de tous les hommes russe");
+console.log(listeRussie);
